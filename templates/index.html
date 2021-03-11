@@ -7,14 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    {% block content%}
     <h2 style="text-align:center">Hello Abhishek!</h2>
     <br>
     <form action='\data' method="POST" style="text-align:center">
-        <input type="text" name='content'>
+		<select name="content">
+			{% for t in p %}
+				<option value="{{t.title}}">{{t.title}}</option>
+			{% endfor %}   
+		</select>
         <input type="submit" value="Search">
     </form> 
     <!-- <iframe src={{slink}} title="Sample Page"></iframe> -->
-    
+	
+		
+	{%endblock%}  
 </body>
 </html>

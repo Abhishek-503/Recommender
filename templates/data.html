@@ -14,7 +14,11 @@
     <div class="container-fluid">
         <br>
         <form style="text-align:center" action='\data' method="POST">
-            <input type="text" name='content'>
+            <select name="content">
+				{% for t in p %}
+					<option value="{{t.title}}">{{t.title}}</option>
+				{% endfor %}   
+			</select>
             <input type="submit" value="Search">
         </form> 
         <div class="row">

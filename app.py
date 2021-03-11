@@ -45,7 +45,7 @@ df["combined_features"] = df.apply(combine_features,axis=1)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html',p=posts)
 @app.route('/data',methods=["POST", "GET"])
 def data():
 	if request.method == "POST":
@@ -75,7 +75,7 @@ def data():
 				i=i+1
 				if i>2:
 					break
-			return render_template('data.html',posts=l,msg='success',vidlink=m)	
+			return render_template('data.html',posts=l,msg='success',vidlink=m,p=posts)	
 
 if __name__ == "__main__":
     app.run(debug=True)
